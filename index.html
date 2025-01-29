@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Шифровка текста в картинку</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Если есть файл с CSS -->
 </head>
 <body>
     <h1>Зашифровать текст в картинку</h1>
     <textarea id="inputText" rows="5" cols="50" placeholder="Введите текст..."></textarea><br>
     <button onclick="encodeText()">Зашифровать</button>
-    <canvas id="canvas" style="display:none;"></canvas>
+    <br><br>
+
+    <h2>Зашифрованное изображение</h2>
+    <img id="encodedImage" alt="Зашифрованное изображение" style="max-width: 100%; border: 1px solid #000;">
     <br>
-    <a id="downloadLink" href="#" download="encoded_image.png">Скачать картинку</a>
+    <a id="downloadLink" href="#" download="encoded_image.png" style="display:none;">Скачать картинку</a>
+
+    <h2>Расшифрованный текст</h2>
+    <p id="decodedText"></p>
+
+    <button onclick="decodeTextFromImage()">Расшифровать текст из изображения</button>
+
+    <canvas id="canvas" style="display:none;"></canvas>
 
     <script src="script.js"></script>
 </body>
