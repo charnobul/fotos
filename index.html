@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифровка текста в картинку</title>
+</head>
+<body>
+    <h1>Зашифровать текст в картинку</h1>
+    <textarea id="inputText" rows="5" cols="50" placeholder="Введите текст..."></textarea><br>
+    <button onclick="encodeText()">Зашифровать</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <br>
+    <a id="downloadLink" href="#" download="encoded_image.png">Скачать картинку</a>
+</body>
+<script src="script.js"></script>
+</html>
