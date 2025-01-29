@@ -1,4 +1,4 @@
-// Функция для шифрования текста в картинку
+// Функция для шифровки текста в картинку с использованием цветов
 function encodeText() {
     const text = document.getElementById('inputText').value;
     if (!text) {
@@ -25,7 +25,13 @@ function encodeText() {
     let x = 0, y = 0;
     for (let i = 0; i < binaryText.length; i++) {
         const bit = binaryText[i] === '1' ? 255 : 0;
-        ctx.fillStyle = `rgb(${bit}, ${bit}, ${bit})`;
+        
+        // Генерируем случайные цвета для пикселей
+        const red = bit === 255 ? Math.floor(Math.random() * 156) + 100 : Math.floor(Math.random() * 100);
+        const green = bit === 255 ? Math.floor(Math.random() * 156) + 100 : Math.floor(Math.random() * 100);
+        const blue = bit === 255 ? Math.floor(Math.random() * 156) + 100 : Math.floor(Math.random() * 100);
+        
+        ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`;
         ctx.fillRect(x, y, 1, 1);
         x++;
         if (x >= width) {
